@@ -1,0 +1,11 @@
+src/
+lib/
+
+*.sqlite
+
+.env*
+.DS_Store
+.npmrc
+.babelrc
+
+npm-debug.log

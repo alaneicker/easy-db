@@ -1,0 +1,39 @@
+{
+  "name": "easy-db",
+  "version": "1.0.0",
+  "description": "A database utility for querying Sqlite",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel -d ./dist ./lib -s",
+    "start": "NODE_ENV=production node ./dist",
+    "start:dev": "NODE_ENV=development nodemon --exec babel-node ./src",
+    "setup": "babel-node ./src/setup",
+    "drop": "babel-node ./lib/cli"
+  },
+  "keywords": [
+    "sqlite",
+    "database"
+  ],
+  "author": "Alan Eicker",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.4",
+    "sqlite": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime-corejs3": "^7.5.5",
+    "boxen": "^4.1.0",
+    "chalk": "^2.4.2",
+    "inquirer": "^7.0.0",
+    "nodemon": "^1.19.1"
+  }
+}
