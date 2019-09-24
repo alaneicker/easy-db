@@ -7,7 +7,7 @@ const megastate = async () => {
 
 const users = async () => {
   const { data } = await db.select('Users', ['*']);
-  return data;
+  return Array.isArray(data) ? data : [data];
 };
 
 const user = async ({ id }) => {
