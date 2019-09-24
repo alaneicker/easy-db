@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "babel -d ./dist ./lib -s",
-    "start": "NODE_ENV=production node ./dist",
-    "start:dev": "NODE_ENV=development nodemon --exec babel-node ./src",
-    "setup": "babel-node ./src/setup",
+    "start": "NODE_ENV=development nodemon --exec babel-node ./example",
+    "setup": "babel-node ./example/setup",
     "drop": "babel-node ./lib/cli"
   },
   "keywords": [
