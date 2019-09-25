@@ -63,8 +63,8 @@ Creates a new database table.
 
 Parameters:
 
-* Table Name `String`
-* Table Columns `Object`
+* table `String`
+* columns `Object`
 
 Returns:
 
