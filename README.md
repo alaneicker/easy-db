@@ -61,13 +61,17 @@ As mentioned above, EasyDB's API allow you to run SQL commands like `CREATE`, `S
 
 Creates a new database table.
 
-```javascript
-/**
- * @param   {String} arg1 Database table name
- * @param   {Object} arg2 Object representing table columns and data types
- * @returns {Object}      Object containing created count
- */
+Parameters:
 
+* Table Name `String`
+* Table Columns `Object`
+
+Returns:
+
+* `Object`
+  * created `Number`
+
+```javascript
 const response = await db.createTable('Products', {
   categoryId: 'number',
   name: 'string',
@@ -101,14 +105,19 @@ CREATE TABLE Products (
 
 Selects one or more records from a database table.
 
-```javascript
-/**
- * @param  {String} arg1 database table name
- * @param  {Array}  arg2 Columns to  be returned
- * @param  {Object} arg2 Filters for WHERE clause
- * @return {Object}      Object containing query result array
- */
+Parameters:
 
+* Options `Object`
+  * table `String`
+  * columns `String`
+  * filters `String` *Optional*
+
+Returns:
+
+* `Object`
+  * data `Array|Object`
+
+```javascript
 // Returns all records with all columns
 const response = await db.select({ table: 'Products' })
 
@@ -142,13 +151,18 @@ WHERE categoryId = 100 AND price < 100.00;
 
 Inserts one or more records into a database table.
 
-```javascript
-/**
- * @param   {String} arg1 Database table name
- * @param   {Object} arg2 Object representing new record data
- * @returns {Object}      Object containing array of insertedIds
- */
+Parameters:
 
+* Options `Object`
+  * table `String`
+  * records `Array|Object`
+
+Returns:
+
+* `Object`
+  * insertedIds `Array`
+
+```javascript
 // Inserts a single record
 const response = await db.insert({
   table: 'Products',
@@ -205,13 +219,19 @@ VALUES (
 
 Updates one or more records in a database table.
 
-```javascript
-/**
- * @param   {String} arg1 Database table name
- * @param   {Object} arg2 Data to update
- * @returns {Object}      Object containing updated count
- */
+Parameters:
 
+* Options `Object`
+  * table `String`
+  * updates `Array|Object`
+  * filters `String` *Optional*
+
+Returns:
+
+* `Object`
+  * changes `Number`
+
+```javascript
 // Updates a single record
 const response = await db.update({
   table: 'Products',
@@ -263,13 +283,19 @@ WHERE inventoryQuantity = 0;
 
 Deletes one or more records from a database table.
 
-```javascript
-/**
- * @param   {String} arg1 Database table name
- * @param   {Array}  arg2 Array of ids
- * @returns {Object}      Object containing deleted count
- */
+Parameters:
 
+* Options `Object`
+  * table `String`
+  * ids `Array` *Optional*
+  * filters `Object` *Optional*
+
+Returns:
+
+* `Object`
+  * deleted `Number`
+
+```javascript
 // Deletes a single record from a table
 const response = await db.delete({
   table: 'Products', 
