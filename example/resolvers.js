@@ -24,10 +24,10 @@ const insertUser = async ({ records }) => {
   return response;
 };
 
-const updateUser = async ({ records }) => {
+const updateUser = async ({ updates }) => {
   const response = await db.update({
     table: 'Users',
-    records,
+    updates,
   });
   return response;
 };
