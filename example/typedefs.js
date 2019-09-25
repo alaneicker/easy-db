@@ -2,34 +2,25 @@ export default `
   type Query {
     users: [User]
     user(id: Int): User
-    megastate: MegaState
   }
   type Mutation {
     insertUser(
-      body: [InsertUserInput]
+      records: [InsertUserInput]
     ): Status
     deleteUser(
       ids: [Int]
     ): Status
+    deleteInactiveUsers: Status
     updateUser(
-      body: [UpdateUserInput]
+      records: [UpdateUserInput]
     ): Status
-  }
-  type MegaState {
-    Users: [User],
-    Products: [Product],
   }
   type User {
     id: Int
     name: String
     email: String
-  }
-  type Product {
-    id: Int
-    categoryId: Int
-    name: String
-    description: String
-    price: Float
+    age: Int
+    status: String
   }
   type Status {
     insertedIds: [Int]
@@ -43,10 +34,14 @@ export default `
   input InsertUserInput {
     name: String!
     email: String!
+    age: Int!
+    status: String!
   }
   input UpdateUserInput {
-    id: Int!
+    id: Int
     name: String
     email: String
+    age: Int
+    status: String
   }
 `;
