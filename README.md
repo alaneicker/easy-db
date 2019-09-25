@@ -133,7 +133,7 @@ Selects a single record based on a single unique filter
 ```javascript
 /**
  * @param  {String} arg1 database table name
- * @param  {Array}  arg2 Columns to  be returned
+ * @param  {Array}  arg2 Columns to be returned
  * @param  {Object} arg2 Filter for WHERE clause
  * @return {Object}      Object containing query result
  */
