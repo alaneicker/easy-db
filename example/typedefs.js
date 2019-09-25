@@ -12,7 +12,7 @@ export default `
     ): Status
     deleteInactiveUsers: Status
     updateUser(
-      records: [UpdateUserInput]
+      updates: [UpdateUserInput]
     ): Status
   }
   type User {
