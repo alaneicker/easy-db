@@ -21,12 +21,12 @@ const insertUser = async ({ body }) => {
 };
 
 const updateUser = async ({ body }) => {
-  const response = await db.update('Users', body);
+  const response = await db.updateById('Users', body);
   return response;
 };
 
 const deleteUser = async ({ ids }) => {
-  const response = await db.delete('Users', ids);
+  const response = await db.deleteById('Users', ids);
   return response;
 };
 
