@@ -215,7 +215,7 @@ Updates one or more records in a database table.
 // Updates a single record
 const response = await db.update({
   table: 'Products',
-  records: {
+  updates: {
     id: 33545,
     price: 1049.99,
   },
@@ -226,7 +226,7 @@ const response = await db.update({
 // Updates multiple records
 const response = await db.update({
   table: 'Products',
-  records: [
+  updates: [
     {
       id: 33545,
       price: 1049.99,
@@ -241,7 +241,7 @@ const response = await db.update({
 // Updates all records that match the filter criteria
 const response = await db.update({
   table: 'Products',
-  records: { status: 'out of stock' },
+  updates: { status: 'out of stock' },
   filters: `inventoryQuantity = 0`,
 });
 ```
