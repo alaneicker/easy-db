@@ -454,75 +454,81 @@ export default db;
 import db from './db-connection';
 
 const procucts = async () => {
-  try {
-    const { data } = await db.select({
-      table: 'Products',
-      columns: 'categoryId, name, price'
-    });
-    return data;
-  } catch (err) {
-    return { err };
+  const { data, err } = await db.select({
+    table: 'Products',
+    columns: 'categoryId, name, price'
+  });
+
+  if (err) {
+    throw new Error(err);
   }
+
+  return data;
 };
 
 const product = async ({ id }) => {
-  try {
-    const { data } = await db.select({
-      table: 'Products',
-      filters: `id = ${id}`,
-    });
-    return data;
-  } catch (err) {
-    return { err };
+  const { data, err } = await db.select({
+    table: 'Products',
+    filters: `id = ${id}`,
+  });
+
+  if (err) {
+    throw new Error(err);
   }
+
+  return data;
 };
 
 const insertProduct = async ({ records }) => {
-  try {
-    const status = await db.insert({
-      table: 'Products',
-      records,
-    });
-    return status;
-  } catch (err) {
-    return { err };
+  const { insertedIds, err } = await db.insert({
+    table: 'Products',
+    records,
+  });
+
+  if (err) {
+    throw new Error(err);
   }
+
+  return { insertedIds };
 };
 
 const updateProduct = async ({ records }) => {
-  try {
-    const status = await db.update({
-      table: 'Products',
-      records,
-    });
-    return status;
-  } catch (err) {
-    return { err };
+  const { changes, err } = await db.update({
+    table: 'Products',
+    records,
+  });
+
+  if (err) {
+    throw new Error(err);
   }
+
+  return { changes };
 };
 
 const deleteProduct = async ({ ids }) => {
-  try {
-    const status = await db.delete({
-      table: 'Products',
-      ids,
-    });
-    return status;
-  } catch (err) {
-    return { err };
-  }
+  const { deleted, err } = await db.delete({
+    table: 'Products',
+    ids,
+  });
+
+  if (err) {
+    throw new Error(err);
+  } 
+
+  return { deleted };
 };
 
 const deleteDiscontinuedProducts = async () => {
-  try {
-    const status = await db.delete({
-      table: 'Products',
-      filters: `status = 'discountinued'`,
-    });
-    return status;
-  } catch (err) {
-    return { err };
+  const { deleted, err } = await db.delete({
+    table: 'Products',
+    filters: `status = 'discountinued'`,
+  });
+
+  if (err) {
+    throw new Error(err);
   }
+
+  return { deleted };
 };
 
 export {
