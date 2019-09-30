@@ -375,12 +375,11 @@ The CLI will provide you with prompts to drop a table.
 
 After you have select the table you want to drop and confirmed your selection, the CLI will execute the `DROP TABLE` command. Once finished, you will recieve confirmation from the CLI that the table has been dropped.
 
-<img src="https://github.allstate.com/raw/aeick/easy-db/master/cli-screen-1.png?token=AAACOSak5mFGRLQE6PIWnERT-yqclNmVks5djNf_wA%3D%3D" width="550">
+<img src="https://raw.githubusercontent.com/alaneicker/easy-db/master/cli-screen-1.png" width="550">
 
-<img src="https://github.allstate.com/raw/aeick/easy-db/master/cli-screen-2.png?token=AAACOWXlhcAl4hp1zZ43F4bHN_nr_yuLks5djNgxwA%3D%3D" width="550">
+<img src="https://raw.githubusercontent.com/alaneicker/easy-db/master/cli-screen-2.png" width="550">
 
-<img src="https://github.allstate.com/raw/aeick/easy-db/master/cli-screen-3.png?token=AAACOerr6yOJk-2nqrr2lXIbU85Lo0Reks5djOWfwA%3D%3D" width="550">
-
+<img src="https://raw.githubusercontent.com/alaneicker/easy-db/master/cli-screen-3.png" width="550">
 
 ## Use Case: Node.js with GraphQL
 
